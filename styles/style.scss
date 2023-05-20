@@ -27,6 +27,11 @@ body::before {
   max-width: calc(100vw - rem(48.3));
   padding: rem(40) rem(0) rem(64);
   margin: 0 auto;
+
+  &-logo {
+    width: rem(146);
+    height: rem(32);
+  }
 }
 
 .hero {
@@ -146,6 +151,8 @@ body::before {
 
   &-logo {
     margin-bottom: rem(32);
+    width: rem(146);
+    height: rem(32);
   }
 
   &__para {

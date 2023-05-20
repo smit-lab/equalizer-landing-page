@@ -73,6 +73,10 @@ body::before {
   padding: 2.5rem 0rem 4rem;
   margin: 0 auto;
 }
+.navbar-logo {
+  width: 9.125rem;
+  height: 2rem;
+}
 
 .hero {
   padding: 0rem 1.5rem;
@@ -201,6 +205,8 @@ body::before {
 }
 .footer-logo {
   margin-bottom: 2rem;
+  width: 9.125rem;
+  height: 2rem;
 }
 .footer__para {
   font-size: 1rem;
