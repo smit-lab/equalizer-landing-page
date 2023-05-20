@@ -14,59 +14,24 @@ $almostBlack: #191826;
   align-items: center;
 }
 
-//flex-centering
-
-@mixin flex-centering {
+@mixin downloadBTN($width, $BGC, $fontColor) {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-//grid-centering
-@mixin grid-centering {
-  display: grid;
-  place-items: center;
-}
-
-//downloadBTN
-
-@mixin downloadBTN-global {
-  height: rem(61);
   border-radius: rem(12);
   font-weight: 700;
   font-size: rem(18);
   line-height: 1.78;
   letter-spacing: -0.18px;
-}
-
-//downloadBTN--ios
-
-@mixin downloadBTN--ios {
-  @include flex-centering;
-  @include downloadBTN-global;
-  background-color: $almostBlack;
-  color: $almostWhite;
   gap: rem(7.92);
-}
-
-//downloadBTN--android
-
-@mixin downloadBTN--android {
-  @include flex-centering;
-  @include downloadBTN-global;
-  background-color: $almostWhite;
-  color: $almostBlack;
-  gap: rem(7.92);
+  width: rem($width);
+  height: rem(61);
+  background-color: $BGC;
+  color: $fontColor;
 }
 
 //downloadBTN--ios--hover
 
-@mixin downloadBTN--ios--hover {
-  background-color: $cyan;
-}
-
-//downloadBTN--android--hover
-
-@mixin downloadBTN--android--hover {
-  background-color: $yellow;
+@mixin downloadBTN--hover($BGC) {
+  background-color: $BGC;
 }

@@ -45,13 +45,12 @@ svg {
     scroll-behavior: auto !important;
   }
 }
-html {
+html, body {
   overflow-x: hidden;
 }
 
 body {
   position: relative;
-  overflow-x: hidden;
 }
 
 body::before {
@@ -63,7 +62,7 @@ body::before {
   position: absolute;
   top: -104px;
   right: -65.4px;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   z-index: -9999;
 }
@@ -86,12 +85,10 @@ body::before {
   font-size: 2.5rem;
   line-height: 1.2;
   letter-spacing: -0.4545px;
-  font-weight: 700;
   margin-bottom: 1.25rem;
   color: #191826;
 }
 .hero__para {
-  font-size: 1rem;
   line-height: 1.62;
   color: #191826;
 }
@@ -166,16 +163,16 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3.8125rem;
   border-radius: 0.75rem;
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.78;
   letter-spacing: -0.18px;
-  background-color: #191826;
-  color: #fcfaf9;
   gap: 0.495rem;
   width: 18.5rem;
+  height: 3.8125rem;
+  background-color: #191826;
+  color: #fcfaf9;
 }
 .subscribe-content-premium__cta--ios:hover {
   background-color: #66e2dc;
@@ -184,16 +181,16 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3.8125rem;
   border-radius: 0.75rem;
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.78;
   letter-spacing: -0.18px;
-  background-color: #fcfaf9;
-  color: #191826;
   gap: 0.495rem;
   width: 18.5rem;
+  height: 3.8125rem;
+  background-color: #fcfaf9;
+  color: #191826;
 }
 .subscribe-content-premium__cta--android:hover {
   background-color: #ffb964;
@@ -201,24 +198,22 @@ body::before {
 
 .footer {
   max-width: calc(100vw - 3.01875rem);
-  margin: 0 auto;
+  margin: 0 auto 2.5rem;
+  display: grid;
+  gap: 2rem;
 }
 .footer-logo {
-  margin-bottom: 2rem;
   width: 9.125rem;
   height: 2rem;
 }
 .footer__para {
-  font-size: 1rem;
   line-height: 1.62;
   color: #191826;
-  margin-bottom: 4rem;
 }
 .footer-social {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  margin-bottom: 5rem;
 }
 .footer-social i {
   font-size: 1.5rem;
@@ -230,15 +225,11 @@ body::before {
 
 @media (min-width: 768px) {
   body::before {
-    content: "";
     background-image: url(/assets/bg-main-tablet.png);
     background-position: center;
     background-size: 64rem;
-    background-repeat: repeat-x;
     top: -30%;
     left: 0;
-    width: 100vw;
-    height: 100%;
   }
   header::after {
     content: "";
@@ -259,22 +250,19 @@ body::before {
   }
   .hero__heading {
     font-size: 4rem;
-    line-height: 1;
+    line-height: inherit;
     letter-spacing: -0.727px;
   }
   .subscribe {
     width: 43.5rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 11.4375rem;
     height: 37.5rem;
-    margin-bottom: 11.4375rem;
   }
   .subscribe::before {
     background-image: url(/assets/bg-pattern-2.svg);
   }
   .subscribe-content {
     flex-direction: row;
-    justify-content: center;
   }
   .subscribe-content-img {
     width: 16.888125rem;
@@ -288,19 +276,19 @@ body::before {
     padding: 3rem;
   }
   .footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     max-width: calc(100vw - 4.875rem);
+    grid-template-columns: 1fr 1fr;
+    gap: 1.625rem;
+  }
+  .footer-logo {
+    grid-area: 1/1/2/2;
   }
   .footer__para {
-    order: 2;
-    grid-area: 2/1/span 2/2;
+    grid-area: 2/1/2/2;
   }
   .footer-social {
     justify-self: end;
-    align-self: self-end;
-    margin: 0;
-    grid-area: 2/2/3/3;
+    grid-area: 1/2/2/2;
   }
 }
 @media (min-width: 1025px) {
@@ -313,7 +301,7 @@ body::before {
   }
   .hero {
     width: 69.375rem;
-    margin: 0 auto;
+    margin: 0 auto 20.0625rem;
     padding: 0;
     padding-right: 17.5rem;
   }
@@ -325,10 +313,13 @@ body::before {
   .hero__para {
     font-size: 1.125rem;
     line-height: 1.7;
-    margin-bottom: 20.0625rem;
   }
   .subscribe {
     width: 69.375rem;
+    margin-bottom: 12.5rem;
+  }
+  .subscribe-content {
+    justify-content: center;
   }
   .subscribe-content-img {
     transform: translate(-6.25rem, -11.25rem);
@@ -358,21 +349,13 @@ body::before {
   .footer {
     max-width: 69.375rem;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 6.25rem;
     align-items: start;
   }
-  .footer-logo {
-    margin-bottom: 0;
-  }
   .footer__para {
-    margin-bottom: 0;
     grid-area: 1/2/1/3;
   }
   .footer-social {
-    align-self: start;
-    margin: 0;
     grid-column: 3;
-    grid-row: inherit;
   }
 }
 
